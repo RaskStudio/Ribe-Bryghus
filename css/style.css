@@ -1,0 +1,1322 @@
+/*CSS Reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    border: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/*Fonts og farver*/
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url("/font/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Roboto-regular';
+    src: url("/font/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'RobotoMono-italic';
+    src: url("/font/RobotoMono-Italic-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: 'RobotoMono-regular';
+    src: url("/font/RobotoMono.ttf");
+}
+
+@font-face {
+    font-family: 'RobotoSerif-italic';
+    src: url("/font/RobotoSerif-Italic.ttf");
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Bebas Neue';
+    color: var(--primary);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+.nav-font {
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    color: var(--text);
+}
+
+p {
+    font-family: 'Roboto-regular';
+    font-size: 16px;
+    color: var(--text);
+}
+
+.note {
+    font-family: 'RobotoMono-regular';
+    font-size: 16px;
+    color: var(--text);
+}
+
+.note-italic {
+    font-family: 'RobotoMono-italic';
+    font-size: 16px;
+    color: var(--text);
+}
+
+.forside-quote {
+    font-family: 'RobotoSerif-italic';
+    font-size: 24px;
+    color: white;
+}
+
+.forside-quote-note {
+    font-family: 'RobotoSerif-italic';
+    font-size: 20px;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    p {
+        font-family: 'Roboto-regular';
+        font-size: 20px;
+        color: var(--text);
+    }
+
+    .note {
+        font-family: 'RobotoMono-regular';
+        font-size: 20px;
+        color: var(--text);
+    }
+
+    .note-italic {
+        font-family: 'RobotoMono-italic';
+        font-size: 20px;
+        color: var(--text);
+    }
+
+    .forside-quote {
+        font-family: 'RobotoSerif-italic';
+        font-size: 48px;
+        color: white;
+    }
+
+    .forside-quote-note {
+        font-family: 'RobotoSerif-italic';
+        font-size: 32px;
+        color: white;
+    }
+}
+
+
+
+:root {
+    --background: #FBF8EE;
+    --accent: #FBAC18;
+    --primary: #2D4E4C;
+    --action: #8C4040;
+    --text: #000000;
+    --header: #ffffff;
+    --bs: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+body {
+    background-color: var(--background);
+}
+
+/*Nav bar*/
+header {
+    background-color: var(--header);
+}
+
+.på-siden {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.nav-bar {
+    min-height: 4.375em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+
+.nav-logo {
+    z-index: 500;
+}
+
+.nav-logo img {
+    position: absolute;
+    width: 20%;
+    left: 50%;
+    top: 1em;
+    transform: translate(-50%, 0);
+}
+
+.nav-menu {
+    position: fixed;
+    z-index: 100;
+    right: -100%;
+    top: 3.375em;
+    flex-direction: column;
+    background-color: var(--header);
+    opacity: 90%;
+    width: fit-content;
+    text-align: end;
+    transition: 750ms;
+    padding-block: 2em;
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-item {
+    padding: 1em 2em;
+    margin-inline: 3em;
+    border-bottom: 2px solid rgb(49, 34, 16, 0.5);
+
+}
+
+.nav-link {
+    transition: 400ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.nav-hamburger {
+    cursor: pointer;
+    float: right;
+}
+
+.bar {
+    display: block;
+    background-color: var(--primary);
+    width: 24px;
+    height: 2px;
+    margin: 6px auto;
+    transition: all 300ms ease-in-out;
+}
+
+.nav-hamburger.active .bar:nth-child(2) {
+    opacity: 0
+}
+
+.nav-hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (min-width: 768px) {
+
+    .nav-logo img {
+        width: 135px;
+    }
+
+    .nav-menu {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+        width: auto;
+        padding-block: 1em;
+        margin-inline: 6em;
+    }
+
+    .nav-item:nth-child(3) {
+        margin-right: 400px;
+    }
+
+    .nav-item {
+        padding: 0;
+        margin-inline: 0;
+        border-bottom: none;
+
+    }
+
+    .nav-hamburger {
+        display: none;
+    }
+}
+
+.nav-container {
+    width: 100%;
+    padding-inline: 2rem;
+}
+
+/*Forside*/
+
+.forside-hero {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+}
+
+.hero-video {
+    object-fit: cover;
+    height: 50vh;
+    object-position: -50% 0;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    position: absolute;
+    z-index: 10;
+    left: 5%;
+}
+
+.hero-text h1 {
+    color: #ffffff;
+}
+
+.hero-highlight {
+    color: var(--accent);
+}
+
+.hero-overlay {
+    position: absolute;
+    background-color: rgba(135, 97, 52, 0.4);
+    z-index: 1;
+    height: 50vh;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .hero-video {
+        object-fit: cover;
+        height: 80vh;
+        width: 200%;
+        object-position: 50%;
+    }
+
+    .hero-overlay {
+        height: 80vh;
+        width: 100%;
+    }
+}
+
+/*Scroll banner*/
+.banner {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 1em;
+    position: relative;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.banner-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 22s linear infinite;
+}
+
+.banner-content span {
+    color: white;
+    font-size: 32px;
+    padding-right: 4em;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/*Infokort*/
+
+.info-kort-venstre,
+.info-kort-højre {
+    display: grid;
+    grid-template-areas: 'info-kort-img'
+        'info-kort-overskrift'
+        'info-kort-text'
+        'info-kort-btn';
+    margin-block-end: 2em;
+}
+
+.info-kort-img {
+    grid-area: info-kort-img;
+}
+
+.info-kort-img img {
+    width: 100%;
+}
+
+.info-kort-overskrift {
+    grid-area: info-kort-overskrift;
+    padding: 2em 1em;
+}
+
+.info-kort-text {
+    grid-area: info-kort-text;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.info-kort-btn {
+    grid-area: info-kort-btn;
+    padding: 2em 1em;
+}
+
+.btn-skabelon {
+    background-color: var(--action);
+    border: none;
+    width: 100%;
+    padding-block: 0.5em;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    color: white;
+}
+
+.forside-quote-container {
+    width: 100%;
+    background-color: var(--primary);
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+@media (min-width: 768px) {
+    .info-kort-venstre {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "info-kort-img info-kort-overskrift"
+            "info-kort-img info-kort-text"
+            "info-kort-img info-kort-btn";
+        column-gap: 6em;
+        margin: 4em 20em;
+        padding: 2em;
+        box-shadow: var(--bs);
+    }
+
+    .info-kort-højre {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "info-kort-overskrift info-kort-img"
+            "info-kort-text info-kort-img"
+            "info-kort-btn info-kort-img";
+        column-gap: 6em;
+        margin: 4em 20em;
+        padding: 2em;
+        box-shadow: var(--bs);
+    }
+}
+
+/*Footer*/
+footer {
+    background-color: var(--primary);
+    display: grid;
+    grid-template-areas: 'footer-info'
+        'footer-links'
+        'footer-copyright';
+    padding: 2em 1em;
+    gap: 2em;
+    width: 100%;
+}
+
+.footer-info {
+    grid-area: footer-info;
+    width: 100%;
+}
+
+.footer-info h2,
+.footer-info .note {
+    color: white;
+}
+
+.footer-links {
+    grid-area: footer-links;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 1em;
+}
+
+.footer-copyright {
+    grid-area: footer-copyright;
+    width: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 10em;
+}
+
+.footer-copyright img {
+    width: 30%;
+    position: absolute;
+    opacity: 50%;
+}
+
+.footer-copyright p {
+    position: absolute;
+    z-index: 10;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .footer-copyright img {
+        width: 8%;
+
+    }
+
+    footer {
+        background-color: var(--primary);
+        display: flex;
+        justify-content: space-around;
+        padding: 2em 6em;
+        gap: 2em;
+    }
+
+    .footer-links {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+}
+
+/*Lidt om os*/
+
+.lidt-om-os-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.lidt-om-os-container img {
+    width: 100%;
+}
+
+.lidt-om-os-introduktion {
+    width: 90vw;
+    padding: 2em 1em;
+}
+
+.lidt-om-os-introduktion a {
+    color: #8C4040;
+    text-decoration: underline;
+}
+
+.side-overskrift {
+    position: absolute;
+    top: 15%;
+}
+
+
+@media (min-width: 768px) {
+    .lidt-om-os-container img {
+        object-fit: cover;
+        height: 80vh;
+    }
+
+    .side-overskrift {
+        top: 20%;
+    }
+
+    .lidt-om-os-introduktion {
+        position: absolute;
+        top: 55%;
+        background-color: var(--background);
+        box-shadow: var(--bs);
+        padding: 2em 2em;
+    }
+}
+
+/*Besøg os*/
+
+.åbning-kort {
+    display: grid;
+    grid-template-areas: 'åbning-kort-img'
+        'åbning-kort-overskrift'
+        'åbning-kort-text'
+        'åbning-kort-text2'
+        'åbning-kort-btn';
+    margin-block-end: 2em;
+}
+
+.indhold-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.indhold-overskrift {
+    margin-block: 2em;
+}
+
+.åbning-kort-img {
+    grid-area: åbning-kort-img;
+}
+
+.åbning-kort-img img {
+    width: 100%;
+}
+
+.åbning-kort-overskrift {
+    grid-area: åbning-kort-overskrift;
+    padding: 2em 1em;
+}
+
+.åbning-kort-text {
+    grid-area: åbning-kort-text;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.åbning-kort-text2 {
+    grid-area: åbning-kort-text2;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.åbning-kort-text2 p {
+    color: var(--primary);
+}
+
+.åbning-kort-btn {
+    grid-area: åbning-kort-btn;
+    padding: 2em 1em;
+}
+
+.besøg-os-kort {
+    display: grid;
+    grid-template-areas:
+        'besøg-os-overskrift'
+        'besøg-os-text'
+        'besøg-os-text2';
+    margin-block-end: 2em;
+    gap: 2em;
+}
+
+
+.besøg-os-overskrift {
+    grid-area: besøg-os-overskrift;
+    padding: 2em 1em;
+}
+
+.besøg-os-text {
+    grid-area: besøg-os-text;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.besøg-os-text a {
+    color: var(--action);
+    text-decoration: underline;
+}
+
+.besøg-os-text2 {
+    grid-area: besøg-os-text2;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.rundvisning-container {
+    display: grid;
+    grid-template-areas: 'rundvisning-img'
+        'rundvisning-overskrift'
+        'rundvisning-text'
+        'rundvisning-text2'
+        'rundvisning-btn';
+    margin-block-end: 2em;
+}
+
+.rundvisning-overskrift {
+    margin-block: 2em;
+}
+
+.rundvisning-img {
+    grid-area: rundvisning-img;
+}
+
+.rundvisning-img img {
+    width: 100%;
+}
+
+.rundvisning-overskrift {
+    grid-area: rundvisning-overskrift;
+    padding: 2em 1em;
+}
+
+.rundvisning-text {
+    grid-area: rundvisning-text;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.rundvisning-text2 {
+    grid-area: rundvisning-text2;
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.rundvisning-text2 p {
+    color: var(--primary);
+}
+
+.rundvisning-btn {
+    grid-area: rundvisning-btn;
+    padding: 2em 1em;
+}
+
+@media (min-width: 768px) {
+    .åbning-kort {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "åbning-kort-img åbning-kort-overskrift"
+            "åbning-kort-img åbning-kort-text"
+            "åbning-kort-img åbning-kort-text2"
+            "åbning-kort-img åbning-kort-btn";
+        column-gap: 6em;
+        margin: 4em 20em;
+        padding: 2em;
+        box-shadow: var(--bs);
+    }
+
+    .besøg-os-kort {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "besøg-os-overskrift besøg-os-overskrift"
+            "besøg-os-text besøg-os-text2";
+        column-gap: 6em;
+        margin: 4em 20em;
+        padding: 2em;
+        box-shadow: var(--bs);
+    }
+
+    .rundvisning-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "rundvisning-overskrift rundvisning-overskrift"
+            "rundvisning-text rundvisning-img"
+            "rundvisning-text2 rundvisning-btn";
+        column-gap: 6em;
+        margin: 4em 20em;
+        padding: 2em;
+        box-shadow: var(--bs);
+    }
+
+}
+
+/*Kontakt os*/
+
+.kontakt-kort {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: 2em;
+}
+
+.kontak-img-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.kontakt-img img {
+    width: 100%;
+}
+
+.mark-img {
+    margin-top: 4em;
+}
+
+.kontakt-overskrift {
+    padding: 1em 1em;
+}
+
+.kontakt-information {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.kontakt-text {
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.kontakt-text2 {
+    padding: 0 1em;
+    line-height: 200%;
+}
+
+.kontakt-btn {
+    padding: 2em 1em;
+}
+
+@media (min-width: 768px) {
+    .mark-img {
+        margin-top: 0;
+    }
+
+    .kontakt-kort {
+        margin-inline: 20em;
+        margin-bottom: 4em;
+        padding: 2em;
+        box-shadow: var(--bs);
+    }
+
+    .kontak-img-information {
+        flex-direction: row;
+        gap: 6em;
+    }
+}
+
+/*postkort*/
+
+.postkort-container {
+    width: 100%;
+}
+
+.postkort-content {
+    padding: 2em;
+    box-shadow: var(--bs);
+}
+
+.postkort-overskrift {
+    margin-bottom: 20px;
+    color: #332902;
+    padding-inline: 2em;
+}
+
+.postkort-text .input_field {
+    margin-bottom: 10px;
+}
+
+.postkort-content .input_field input[type="text"],
+.postkort-text textarea {
+    border: none;
+    border-bottom: 2px solid rgb(49, 34, 16, 0.5);
+    width: 100%;
+    padding: 10px;
+    font-family: 'RobotoMono-italic';
+    background-color: var(--background);
+}
+
+.postkort-text {
+    margin-top: 2em;
+}
+
+.postkort-text textarea {
+    resize: none;
+    height: 30em;
+    border: 2px solid rgb(49, 34, 16, 0.5);
+    background-image: url(/img/ribe-domkirke.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+}
+
+.postkort-container .btn input[type="submit"] {
+    border: 0;
+    margin-top: 1em;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
+    background-color: var(--action);
+    color: white;
+    cursor: pointer;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+}
+
+#error_message {
+    margin-bottom: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 16px;
+    font-family: RobotoMono-italic;
+    transition: all 0.5s ease;
+}
+
+.frimærke {
+    position: absolute;
+    width: 20%;
+    right: 2em;
+    margin-top: 8em;
+}
+
+@media (min-width: 768px) {
+    .postkort-container {
+        background-color: var(--background);
+        box-shadow: var(--bs);
+    }
+
+    .indhold-container-postkort {
+        width: 100%;
+        padding-inline: 20em;
+        margin-block: 2em;
+    }
+
+    .postkort-content {
+        box-shadow: none;
+    }
+
+    .postkort-overskrift {
+        padding-block: 2em;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "postkort-text postkort-udfyld"
+            "postkort-text postkort-udfyld"
+            "postkort-text error_message"
+            "postkort-text btn";
+        width: 100%;
+        column-gap: 6em;
+    }
+
+    .postkort-udfyld {
+        grid-area: postkort-udfyld;
+        width: 100%;
+    }
+
+    #error_message {
+        grid-area: error_message;
+        width: 100%;
+        height: fit-content;
+    }
+
+    .postkort-text {
+        grid-area: postkort-text;
+        width: 100%;
+    }
+
+    .btn {
+        grid-area: btn;
+        width: 100%;
+    }
+
+    .frimærke {
+        width: 10%;
+        right: 22em;
+        margin-top: 2em;
+
+    }
+}
+
+/*Vores øl*/
+
+.udvalg-selector-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2em;
+    box-shadow: var(--bs);
+    gap: 1em;
+    justify-content: center;
+    text-align: center;
+}
+
+.udvalg-selector {
+    padding: 0.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.udvalg-selector div {
+    height: fit-content;
+}
+
+.udvalg-selector:hover {
+    border: 2px solid var(--accent);
+}
+
+
+.udvalg-selector-container img {
+    width: 100%;
+}
+
+.udvalg-selector-container h3 {
+    color: white;
+    background-color: var(--action);
+    padding-block: 0.5em;
+    font-size: 24px;
+}
+
+/*Udvalgs kort*/
+
+.udvalg-container {
+    width: 100%;
+}
+
+.øludvalg-kort {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+}
+
+.øludvalg-kort img {
+    width: 100%;
+}
+
+.øludvalg-information {
+    line-height: 160%;
+    display: none;
+}
+
+.øludvalg-kort-btn h3 {
+    text-align: center;
+    padding: 0.5em;
+    color: white;
+    background-color: var(--action);
+}
+
+.udvalg-container-grid {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+
+    .udvalg-selector {
+        padding: 0.5em;
+        width: 20%;
+    }
+
+    .udvalg-container-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*Tilbehør*/
+
+.tilbehør-kort {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+}
+
+.tilbehør-kort img {
+    width: 100%;
+}
+
+.tilbehør-pris {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: var(--primary);
+    padding-block: 0.5em;
+}
+
+@media (min-width: 768px) {
+
+    .tilbehør-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* GALLERI CSS  */
+
+.galleri_h3 {
+    text-align: start;
+    width: 100%;
+    padding-inline: 2em;
+}
+
+.galleri-container {
+    max-width: 100%;
+    width: 95%;
+    padding: 1em 2em;
+    margin-bottom: 2em;
+}
+
+.galleri-slider-wrapper {
+    position: relative;
+}
+
+.galleri-slide-button {
+    position: absolute;
+    top: 50%;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    z-index: 5;
+    color: var(--background);
+    display: flex;
+    cursor: pointer;
+    font-size: 2.2rem;
+    background: var(--action);
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+#prev-slide,
+#next-slide {
+    display: none;
+}
+
+.galleri-slider-wrapper .billede_galleri {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    font-size: 0;
+    list-style: none;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.galleri-slider-wrapper .billede_galleri::-webkit-scrollbar {
+    display: none;
+}
+
+.galleri-slider-wrapper .billede_galleri .galleri_billede {
+    width: fit-content;
+    height: 380px;
+    object-fit: cover;
+}
+
+.galleri-container .galleri-slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.galleri-slider-scrollbar .galleri-scrollbar-track {
+    background: #ccc;
+    width: 100%;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+}
+
+.galleri-slider-scrollbar:hover .galleri-scrollbar-track {
+    height: 4px;
+}
+
+.galleri-slider-scrollbar .galleri-scrollbar-thumb {
+    position: absolute;
+    background: var(--action);
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+}
+
+.galleri-slider-scrollbar .galleri-scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+
+.galleri-slider-scrollbar .galleri-scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+
+/* Media Q til computer */
+@media only screen and (min-width: 1024px) {
+    .galleri-container {
+        max-width: 95%;
+    }
+
+    .galleri-slider-wrapper .galleri-slide-button {
+        display: flex;
+    }
+
+    .galleri-slider-wrapper .galleri-slide-button#prev-slide {
+        left: -25px;
+    }
+
+    .galleri-slider-wrapper .galleri-slide-button#next-slide {
+        right: -25px;
+    }
+
+    .galleri-slider-wrapper .billede_galleri {
+        gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .galleri-slider-wrapper .billede_galleri .galleri_billede {
+        width: fit-content;
+        height: 400px;
+    }
+
+    .galleri-slider-scrollbar .galleri-scrollbar-thumb {
+        width: 50%;
+    }
+
+    .galleri-slide-button:hover {
+        background: var(--accent);
+    }
+}
+
+
+/* FORHANDLERE CSS */
+
+.forhandler-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: 2em;
+    justify-content: space-between;
+}
+
+.forhandler-kort {
+    width: 200px;
+    margin-block: 2em;
+}
+
+.udenfor-ribe {
+    margin: 2em;
+}
+
+/* KALENDER CSS */
+
+.aktuelle-events {
+    width: 100%;
+    box-shadow: var(--bs);
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+    gap: 2em;
+}
+
+.aktuelle-events-indhold {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.afholdte-events {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+    gap: 2em;
+}
+
+.afholdte-events-indhold {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.afholdte-events-indhold img {
+    opacity: 75%;
+}
+
+@media(min-width:768px) {
+    .aktuelle-events-indhold {
+        flex-direction: row;
+    }
+
+    .afholdte-events-indhold {
+        flex-direction: row;
+    }
+}
+
+/*Det siger vores kunder*/
+.kunde-container {
+    width: 100%;
+    padding: 4em;
+    background-color: var(--background);
+    box-shadow: var(--bs);
+}
+
+.kunde-container h3{
+    padding-bottom: 2em;
+}
+
+.kunde-content {
+    overflow: auto;
+    white-space: nowrap;
+    padding: 0vw 0vw 3vw 5vw;
+}
+
+.kunde-content img {
+    display: inline-block;
+    vertical-align: top;
+    width: 21vw;
+    height: 33vw;
+    margin-right: 5vw;
+}

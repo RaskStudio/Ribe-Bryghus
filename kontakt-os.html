@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/kontakt.js" defer></script>
+    <script src="js/forside.js" defer></script>
+    <meta name="description"
+        content="Gå på opdagelse i vores øl univers, med lokale øl brygget med rung hånd siden 2006. Besøg vores bryghus med lokation på togremisen i Ribe. Prøv vores 6 udskiftende haner med lokal bryggede øl. Hos Ribe Bryhus dyrker vi den lokale hjertevarme.">
+    <meta name="keywords"
+        content="ribe bryghus, lokal bryggeri ribe, håndværksøl ribe, dansk øl, mikrobryggeri ribe, ølsmagning ribe, specialøl ribe, ølbrygning ribe, lokale bryggerier, øl ribe, ribe øl, craft beer ribe, øl events ribe, ølshop ribe, lokal øl nær mig, mikrobryggeri nær mig, ipa, blond ale, vadehavsbryg, porter, brown ale, black ale, ale, pilsner, remise, rød bock, gylden ale, hvedeøl, julepils">
+    <title>Ribe Bryghus | Kontakt Os</title>
+</head>
+
+<body>
+      <!--Link til reference: https://codepen.io/jim-kernicky/pen/BarYqxy -->
+    <header>
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-logo"><img src="img/logo.png" alt="Ribe Bryghus logo"></a>
+            <div class="nav-container">
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="vores-øl.html" class="nav-link nav-font">VORES ØL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lidt-om-os.html" class="nav-link nav-font">LIDT OM OS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="besøg-os.html" class="nav-link nav-font">BESØG OS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="galleri.html" class="nav-link nav-font">GALLERI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="kalender.html" class="nav-link nav-font">KALENDER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="kontakt-os.html" class="nav-link nav-font på-siden">KONTAKT OS</a>
+                    </li>
+                </ul>
+
+                <div class="nav-hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+        </nav>
+        </div>
+    </header>
+
+    <div class="indhold-container">
+        <h2 class="indhold-overskrift">
+            Kontakt Os
+        </h2>
+
+        <div class="kontakt-kort">
+            <div class="kontak-img-information">
+                <div>
+                    <div class="kontakt-img lars-img"><img src="img/lars_potræt.png" alt="Lars Potræt"></div>
+                    <div class="kontakt-information lars">
+                        <div class="kontakt-overskrift">
+                            <h2>Lars nielsen</h2>
+                        </div>
+                        <div class="kontakt-text">
+                            <p class="note-italic">Brygmester</p>
+                        </div>
+                        <div class="kontakt-text2">
+                            <p class="note-italic">Telefon: +45 40431712</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="kontakt-img mark-img"><img src="img/mark_potræt.png" alt="Mark Potræt"></div>
+                    <div class="kontakt-information mark">
+                        <div class="kontakt-overskrift">
+                            <h2>Mark Vind</h2>
+                        </div>
+                        <div class="kontakt-text">
+                            <p class="note-italic">Teknisk Direktør</p>
+                        </div>
+                        <div class="kontakt-text2">
+                            <p class="note-italic">Telefon: +45 40431712</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kontakt-btn"><button class="btn-skabelon"><a href="mailto:mail@ribebryghus.dk">Send en
+                        Mail</a></button>
+            </div>
+        </div>
+    </div>
+    <!--Postkort-->
+    <!--Link til reference: https://www.geeksforgeeks.org/create-a-contact-form-using-html-css-javascript/ -->
+    <div class="indhold-container-postkort">
+        <div class="postkort-container">
+            <img class="frimærke" src="img/frimærke.png" alt="Frimærke">
+            <div class="postkort-overskrift">
+                <h2>Ønskebrev</h2>
+                <p class="note">Hvilke events kunne du tænke dig?
+                    <br>
+                    Hvad kan vi gøre bedre?
+                    <br>
+                    m.m.
+                </p>
+            </div>
+
+            <div class="postkort-content">
+                <div id="error_message"></div>
+                <form action="" id="myform" onsubmit="return validate();">
+                    <div class="postkort-udfyld">
+                        <div class="input_field">
+                            <h3>TIL: Ribe Bryghus</h3>
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Dit navn..." id="name">
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Emne..." id="subject">
+                        </div>
+                        <div class="input_field">
+                            <input type="text" placeholder="Din e-mail adresse..." id="email">
+                        </div>
+                    </div>
+                    <div class="postkort-text">
+                        <div class="input_field">
+                            <textarea type="text" placeholder="Besked" id="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <input type="submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <footer>
+        <div class="footer-info">
+            <h2>RIbe Bryghus ApS</h2>
+            <a target="_blank" class="note" href="https://maps.app.goo.gl/t62AjA3MG8D9A7nB8">Seminarievej 16B, 6760
+                Ribe</a>
+            <a class="note" href="mailto:mail@ribebryghus.dk">mail@ribebryghus.dk</a>
+        </div>
+        <div class="footer-copyright">
+            <p class="note">© Copyright 2024. Ribe Bryghus ApS <br> All rights reserved.</p>
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <div class="footer-links">
+            <a target="_blank" href="https://www.findsmiley.dk/950036"><img src="img/fødevarerkontrol.png"
+                    alt="Fødevare Smiley"></a>
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100028848417005&fref=ts"><img
+                    src="img/facebook.png" alt="Facebook"></a>
+            <a target="_blank" href="https://www.instagram.com/ribe.bryghus/"><img src="img/instagram.png"
+                    alt="instagram"></a>''
+        </div>
+    </footer>
+</body>
+
+</html>
